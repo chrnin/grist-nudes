@@ -1,13 +1,10 @@
 name: send nudes
 
 on: push
+
 defaults:
   run:
     shell: nu {0}
-
-- uses: hustcer/setup-nu@v3.9
-  with:
-    version: "0.87" 
 
 - env:
     GRIST_APIKEY: ${{ secrets.GRIST_APIKEY }}
@@ -16,6 +13,13 @@ defaults:
     GRIST_ORG: ${{ secrets.GRIST_ORG }}
     GRIST_WORKSPACE: ${{ secrets.GRIST_WORKSPACE }}
 
-- name: run example nu-shell script
-  run: ./example.nu 
+jobs:
+  basic-usage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hustcer/setup-nu@v3.9
+        with:
+          version: "0.87"
+      - name: run example nu-shell script
+        run: ./example.nu 
 
