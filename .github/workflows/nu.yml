@@ -2,10 +2,6 @@ name: send nudes
 
 on: push
 
-defaults:
-  run:
-    shell: nu {0}
-
 jobs:
   basic-usage:
     runs-on: ubuntu-latest
@@ -13,8 +9,10 @@ jobs:
       - uses: hustcer/setup-nu@v3.9
         with:
           version: "0.87"
+      - name: list content
+        run: ls
       - name: run example nu-shell script
-        run: ./example.nu 
+        run: nu example.nu 
         env:
           GRIST_APIKEY: ${{ secrets.GRIST_APIKEY }}
           GRIST_DOC: ${{ secrets.GRIST_DOC }}
