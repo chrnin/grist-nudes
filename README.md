@@ -13,7 +13,7 @@ Start your own script by
 source grist.nu
 
 # here you go
-get_grist Embarquement
+get_grist Bottles
 ```
 
 ## setup your actions
