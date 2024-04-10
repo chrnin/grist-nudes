@@ -3,15 +3,14 @@ name: send nudes
 on: push
 
 jobs:
-  basic-usage:
+  check-embarquement:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: hustcer/setup-nu@v3.9
         with:
           version: "0.87"
-      - name: list content
-        run: ls
+
       - name: run example nu-shell script
         run: nu example.nu 
         env:
